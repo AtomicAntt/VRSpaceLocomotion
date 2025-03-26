@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FireExtinguisher : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public ParticleSystem particles;
+
+    public void Shoot()
     {
-        
+        particles.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Stop()
     {
-        
+        particles.Stop();
     }
 }

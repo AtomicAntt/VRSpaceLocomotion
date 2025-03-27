@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireExtinguisher : MonoBehaviour
 {
     public ParticleSystem particles;
+    public AudioSource whooshSound;
 
     private float propelForce = 0.3f;
     private GameObject player;
@@ -29,12 +30,14 @@ public class FireExtinguisher : MonoBehaviour
     public void Shoot()
     {
         activated = true;
+        whooshSound.Play();
         particles.Play();
     }
 
     public void Stop()
     {
         activated = false;
+        whooshSound.Stop();
         particles.Stop();
         playerLocomotion.propelling = false; // Reason why I call it here is because perhaps there are multiple fire extinguishers, so only if you let go of the current one will it stop.
     }

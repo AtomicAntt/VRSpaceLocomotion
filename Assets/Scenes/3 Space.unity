@@ -1477,6 +1477,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 792896467, guid: 58737df6d40bb7442ae753b50a911075, type: 3}
+      propertyPath: m_MovementType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 792896467, guid: 58737df6d40bb7442ae753b50a911075, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 741653620401015265}

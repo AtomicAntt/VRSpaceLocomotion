@@ -10729,6 +10729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 741653619818835606}
+  locomotion: {fileID: 5507377216596094370}
   velocityRight:
     m_UseReference: 1
     m_Action:

@@ -6,8 +6,8 @@ public class PlayerLocomotion : MonoBehaviour
 {
     public Vector3 velocity = Vector3.zero;
     public bool propelling = false;
-    private float airResistance = 0.2f;
-    private float maxVelocity = 0.6f;
+    private float airResistance = 0.1f;
+    private float maxVelocity = 1.2f;
 
     // Update is called once per frame
     public void FixedUpdate()

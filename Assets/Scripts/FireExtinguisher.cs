@@ -13,7 +13,7 @@ public class FireExtinguisher : MonoBehaviour
     private PlayerLocomotion playerLocomotion;
     private bool activated = false;
 
-    public float extinguishRange = 10f; // How far the extinguisher reaches
+    public float extinguishRange = 20f; // How far the extinguisher reaches
     public float extinguishRadius = 2f; // Radius of extinguishing area
 
     public void Start()
@@ -35,7 +35,7 @@ public class FireExtinguisher : MonoBehaviour
             RaycastHit hit;
             Vector3 rayOrigin = particles.transform.position;
             Vector3 rayDirection = particles.transform.forward;
-            Debug.DrawRay(rayOrigin, rayDirection * extinguishRange, Color.red);
+            //Debug.DrawRay(rayOrigin, rayDirection * extinguishRange, Color.red);
             if (Physics.Raycast(rayOrigin, rayDirection, out hit, extinguishRange))
             {
                 if (hit.collider.CompareTag("Flame"))

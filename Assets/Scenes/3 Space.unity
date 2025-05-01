@@ -4250,7 +4250,7 @@ RectTransform:
   m_GameObject: {fileID: 2025486487}
   m_LocalRotation: {x: -0.00000021073421, y: 2.1316277e-14, z: -0.00000017881388,
     w: -1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.114}
+  m_LocalPosition: {x: 0, y: 0, z: -0.11399987}
   m_LocalScale: {x: 0.00045763995, y: 0.00051911006, z: 0.0009999999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4294,9 +4294,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac03d2912c2f9747af1b1f868789f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extinguisherButton: {fileID: 1988446583}
-  checkpointButton: {fileID: 974716618}
+  activateActionValue:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Activate Action Value
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ccc7b1f4-427b-4665-bab3-bb652e8795db
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: bc8b19e2-f56f-4b08-a4f0-44158ff7dcb2
+        m_Path: 
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Activate Action Value
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  panel: {fileID: 1903526519}
   extinguisher: {fileID: 100002, guid: 58737df6d40bb7442ae753b50a911075, type: 3}
+  xrCamera: {fileID: 6644439967690536318}
 --- !u!1001 &2029450684
 PrefabInstance:
   m_ObjectHideFlags: 0

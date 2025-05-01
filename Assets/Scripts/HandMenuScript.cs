@@ -14,6 +14,7 @@ public class HandMenuScript : MonoBehaviour
     public GameObject panel;
 
     public GameObject extinguisher;
+    public AudioSource spawnSound;
 
     public Transform xrCamera;
 
@@ -36,10 +37,11 @@ public class HandMenuScript : MonoBehaviour
         print("Extinguisher Button Pushed");
 
         // Position 1 meter in front of the headset
-        Vector3 spawnPosition = xrCamera.position + xrCamera.forward * 1.0f;
+        Vector3 spawnPosition = xrCamera.position + xrCamera.forward * 0.7f;
         Quaternion spawnRotation = extinguisher.transform.rotation; // face same direction
 
         Instantiate(extinguisher, spawnPosition, spawnRotation);
+        spawnSound.Play();
         //print(activateActionValue.action.ReadValue<float>());
     }
 }

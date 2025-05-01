@@ -13,7 +13,7 @@ public class FireExtinguisher : MonoBehaviour
     private PlayerLocomotion playerLocomotion;
     private bool activated = false;
 
-    public float extinguishRange = 3f; // How far the extinguisher reaches
+    public float extinguishRange = 10f; // How far the extinguisher reaches
     public float extinguishRadius = 2f; // Radius of extinguishing area
 
     public void Start()
@@ -30,17 +30,32 @@ public class FireExtinguisher : MonoBehaviour
             playerLocomotion.propelling = true; // in case you have two fire extinguishers at the same time? might help keep it set to true when one is stopped.
 
             // Extinguish fires
-            Collider[] hits = Physics.OverlapSphere(particles.transform.position + particles.transform.forward * extinguishRange, extinguishRadius);
-            foreach (var hit in hits)
+            //Collider[] hits = Physics.OverlapSphere(particles.transform.position + particles.transform.forward * extinguishRange, extinguishRadius);
+
+            RaycastHit hit;
+            Vector3 rayOrigin = particles.transform.position;
+            Vector3 rayDirection = particles.transform.forward;
+            Debug.DrawRay(rayOrigin, rayDirection * extinguishRange, Color.red);
+            if (Physics.Raycast(rayOrigin, rayDirection, out hit, extinguishRange))
             {
-                if (hit.CompareTag("Flame"))
+                if (hit.collider.CompareTag("Flame"))
                 {
                     // Call a method on the fire to extinguish it
-                    Flame fire = hit.gameObject.GetComponent<Flame>();
+                    Flame fire = hit.collider.gameObject.GetComponent<Flame>();
                     fire.Extinguish();
                     extinguishSound.Play();
                 }
             }
+            //foreach (var hit in hits)
+            //{
+            //    if (hit.CompareTag("Flame"))
+            //    {
+            //        // Call a method on the fire to extinguish it
+            //        Flame fire = hit.gameObject.GetComponent<Flame>();
+            //        fire.Extinguish();
+            //        extinguishSound.Play();
+            //    }
+            //}
         }
     }
 

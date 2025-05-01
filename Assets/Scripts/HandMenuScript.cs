@@ -20,6 +20,7 @@ public class HandMenuScript : MonoBehaviour
 
     public TextMeshProUGUI tutorialText;
     public GameObject tutorialFire;
+    public AudioSource tutorialAudio;
 
     public Transform xrCamera;
 
@@ -45,6 +46,7 @@ public class HandMenuScript : MonoBehaviour
         {
             tutorialText.text = "TUTORIAL\n\nNow, grab that fire extinguisher and propel yourself to the checkpoint area!\n\nYou will be propelled away from the direction you shoot.";
             //tutorialFire.SetActive(true);
+            tutorialAudio.Play();
         }
 
         pressed = true;

@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     public bool tutorialCheckpoint = false;
     public TextMeshProUGUI tutorialText;
     public GameObject tutorialFire;
+    public AudioSource tutorialAudio;
 
     public GameObject player;
 
@@ -15,9 +16,9 @@ public class Checkpoint : MonoBehaviour
     {
         if ((transform.position - player.transform.position).magnitude <= 2.0f && tutorialCheckpoint == true)
         {
-            print("triggered");
             tutorialCheckpoint = false;
             tutorialFire.SetActive(true);
+            tutorialAudio.Play();
             tutorialText.text = "TUTORIAL\n\n OH NO!\n\nThe checkpoint activator has set on fire!\n\nUse the fire extinguisher to take out the fire.";
         }
     }

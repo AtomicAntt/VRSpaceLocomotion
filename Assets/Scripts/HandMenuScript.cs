@@ -37,7 +37,7 @@ public class HandMenuScript : MonoBehaviour
 
         // Position 1 meter in front of the headset
         Vector3 spawnPosition = xrCamera.position + xrCamera.forward * 1.0f;
-        Quaternion spawnRotation = Quaternion.LookRotation(xrCamera.forward); // face same direction
+        Quaternion spawnRotation = extinguisher.transform.rotation; // face same direction
 
         Instantiate(extinguisher, spawnPosition, spawnRotation);
         //print(activateActionValue.action.ReadValue<float>());
